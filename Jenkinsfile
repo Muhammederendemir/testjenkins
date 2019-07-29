@@ -8,7 +8,10 @@ node {
     def registryCredential = 'dockerhub'
 	
 	stage('Git') {
-		git 'https://github.com/mhmmderen3/testjenkins'
+		steps {
+
+			checkout scm
+		}
 	}
 	stage('Build') {
 		sh 'npm install'
